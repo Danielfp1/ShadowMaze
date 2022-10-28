@@ -108,3 +108,7 @@ anims/Run = SubResource( 5 )
 visible = false
 position = Vector2( 95.5, 82 )
 shape = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 112, 91 )
+current = true
