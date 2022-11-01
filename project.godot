@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="ShadowMaze"
-run/main_scene="res://scenes/Enimes.tscn"
+run/main_scene="res://scenes/Enemies/Enemies.tscn"
 config/icon="res://icon.png"
 
 [display]
