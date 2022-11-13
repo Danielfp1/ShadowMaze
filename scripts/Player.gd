@@ -29,7 +29,6 @@ func move() -> void:
 
 func attack() -> void:
 	if Input.is_action_just_pressed("Attack") and not can_attack:
-		pass
 		can_attack = true
 
 
