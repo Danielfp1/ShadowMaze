@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Hero/Hero.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -15,7 +15,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 60, 61, 62, 63 ]
 }
 tracks/1/type = "value"
@@ -42,7 +42,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 76, 77, 78 ]
 }
 
@@ -126,8 +126,42 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 33, 34, 35, 36, 37, 38, 39 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "RunDown"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "RunUp"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 21, 22, 23, 24, 25, 26 ]
 }
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -144,7 +178,7 @@ speed = 120
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 9
-frame = 63
+frame = 23
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -153,8 +187,11 @@ anims/Death = SubResource( 4 )
 anims/Idle = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/Run = SubResource( 5 )
+anims/RunDown = SubResource( 8 )
+anims/RunUp = SubResource( 9 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 3 )
 shape = SubResource( 6 )
 

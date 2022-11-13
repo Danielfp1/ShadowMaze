@@ -7,6 +7,7 @@ onready var sprite: Sprite = get_node("Sprite")
 var velocity: Vector2
 var can_die: bool = false
 var can_attack: bool = false
+var RunDownUp: bool = false
 
 export (int) var speed
 
@@ -39,8 +40,12 @@ func animate() -> void:
 	elif can_attack:
 		animation.play("Attack")
 		set_physics_process(false)
-	elif velocity != Vector2.ZERO:
+	elif velocity.x != 0:
 		animation.play("Run")
+	elif velocity.y > 0:
+		animation.play("RunDown")
+	elif velocity.y < 0:
+		animation.play("RunUp")
 	else:
 		animation.play("Idle")
 
@@ -51,6 +56,10 @@ func verify_direction() -> void:
 	elif velocity.x < 0:
 		sprite.flip_h = true
 		collision.position = Vector2(-22.5,-7.5)
+	elif velocity.y > 0:
+		RunDownUp = true
+	else:
+		RunDownUp = false
 		
 func kill() -> void:
 	can_die = true
