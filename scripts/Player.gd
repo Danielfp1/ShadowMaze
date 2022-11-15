@@ -5,13 +5,17 @@ onready var animation: AnimationPlayer = get_node("Animation")
 onready var sprite: Sprite = get_node("Sprite")
 
 var velocity: Vector2
+
+#Flags
 var can_die: bool = false
 var can_attack: bool = false
 
-#Direcao em que esta olhando
+#Direção em que o Player esta voltado
 var facingDirection: String = ""
 
+#Velocidade de movimentação
 export (int) var speed
+
 
 func _physics_process(_delta: float) -> void:
 	move()
@@ -40,7 +44,17 @@ func animate() -> void:
 		animation.play("Death")
 		set_physics_process(false)
 	elif can_attack:
-		animation.play("Attack")
+		#Direção do ataque
+		if facingDirection == "right":
+			animation.play("AttackRight")
+		elif facingDirection == "left":
+			animation.play("AttackLeft")
+		elif facingDirection == "up":
+			animation.play("AttackUp")
+		elif facingDirection == "down":
+			animation.play("AttackDown")
+		else:
+			animation.play("AttackRight")
 		set_physics_process(false)
 	elif velocity.x > 0:
 		animation.play("RunRight")
@@ -51,7 +65,7 @@ func animate() -> void:
 	elif velocity.y < 0:
 		animation.play("RunUp")
 	else:
-		print(facingDirection)
+		#Direção em que o Player esta voltado
 		if facingDirection == "right":
 			animation.play("IdleRight")
 		elif facingDirection == "left":
@@ -66,23 +80,37 @@ func animate() -> void:
 
 func verify_direction() -> void:
 	if velocity.x > 0:
+		#Mover hitbox
+		collision.rotation = 0
 		collision.position = Vector2(22.5,-7.5)
+		#Olhar para direita
 		facingDirection = "right"
 	elif velocity.x < 0:
+		#Mover hitbox
+		collision.rotation = 0
 		collision.position = Vector2(-22.5,-7.5)
+		#Olhar para esquerda
 		facingDirection = "left"
 	elif velocity.y > 0:
+		#Mover hitbox
+		collision.position = Vector2(-1,26)
+		collision.rotation = 29.845
+		#Olhar para baixo
 		facingDirection = "down"
 	elif velocity.y < 0:
+		#Mover hitbox
+		collision.position = Vector2(1,-26)
+		collision.rotation = 29.845
+		#Olhar para cima
 		facingDirection = "up"
 		
 func kill() -> void:
 	can_die = true
 
-
+#Quando terminar alguma animação
 func on_animation_finished(anim_name):
 	if anim_name == "Death":
 		var _reload: bool = get_tree().reload_current_scene()
-	elif anim_name == "Attack":
+	elif anim_name == "AttackRight" || anim_name == "AttackLeft" || anim_name == "AttackUp" || anim_name == "AttackDown":
 		can_attack = false
 		set_physics_process(true)
