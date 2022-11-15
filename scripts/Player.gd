@@ -7,7 +7,9 @@ onready var sprite: Sprite = get_node("Sprite")
 var velocity: Vector2
 var can_die: bool = false
 var can_attack: bool = false
-var RunDownUp: bool = false
+
+#Direcao em que esta olhando
+var facingDirection: String = ""
 
 export (int) var speed
 
@@ -40,26 +42,39 @@ func animate() -> void:
 	elif can_attack:
 		animation.play("Attack")
 		set_physics_process(false)
-	elif velocity.x != 0:
-		animation.play("Run")
+	elif velocity.x > 0:
+		animation.play("RunRight")
+	elif velocity.x < 0:
+		animation.play("RunLeft")
 	elif velocity.y > 0:
 		animation.play("RunDown")
 	elif velocity.y < 0:
 		animation.play("RunUp")
 	else:
-		animation.play("Idle")
+		print(facingDirection)
+		if facingDirection == "right":
+			animation.play("IdleRight")
+		elif facingDirection == "left":
+			animation.play("IdleLeft")
+		elif facingDirection == "up":
+			animation.play("IdleUp")
+		elif facingDirection == "down":
+			animation.play("IdleDown")
+		else:
+			animation.play("IdleDown")
+			
 
 func verify_direction() -> void:
 	if velocity.x > 0:
-		sprite.flip_h = false
 		collision.position = Vector2(22.5,-7.5)
+		facingDirection = "right"
 	elif velocity.x < 0:
-		sprite.flip_h = true
 		collision.position = Vector2(-22.5,-7.5)
+		facingDirection = "left"
 	elif velocity.y > 0:
-		RunDownUp = true
-	else:
-		RunDownUp = false
+		facingDirection = "down"
+	elif velocity.y < 0:
+		facingDirection = "up"
 		
 func kill() -> void:
 	can_die = true
