@@ -6,6 +6,9 @@ onready var sprite: Sprite = get_node("Sprite")
 var player_ref = null
 var velocity: Vector2
 
+#Flags
+var can_die: bool = false
+
 export (int) var speed
 
 func _physics_process(_delta: float) -> void:
@@ -20,16 +23,20 @@ func move() ->void:
 		var distance_length: float = distance.length()
 		if distance_length <= 17:
 			velocity = Vector2.ZERO
-			#player_ref.kill()
+			player_ref.kill()
 		else:
 			velocity = speed * direction
-		print(distance_length)
+		#print(distance_length)
 	else:
 		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
 
 func animate() -> void:
-	if velocity != Vector2.ZERO:
+	if can_die:
+		#print("morreu!")
+		animation.play("Death")
+		set_physics_process(false)
+	elif velocity != Vector2.ZERO:
 		animation.play("Walk")
 	else:
 		animation.play("Attack")
@@ -49,3 +56,5 @@ func on_body_exited(body):
 	if body.is_in_group("player"):
 		player_ref = null
  
+func kill() -> void:
+	can_die = true

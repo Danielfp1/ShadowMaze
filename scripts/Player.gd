@@ -114,3 +114,8 @@ func on_animation_finished(anim_name):
 	elif anim_name == "AttackRight" || anim_name == "AttackLeft" || anim_name == "AttackUp" || anim_name == "AttackDown":
 		can_attack = false
 		set_physics_process(true)
+
+
+func _on_AttackArea_body(body):
+	if body.is_in_group("enemy"):
+		body.kill()

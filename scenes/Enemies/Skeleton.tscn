@@ -90,7 +90,7 @@ extents = Vector2( 9.5, 9.75 )
 [sub_resource type="CircleShape2D" id=6]
 radius = 78.8543
 
-[node name="Skeleton" type="KinematicBody2D"]
+[node name="Skeleton" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
 speed = 60
 

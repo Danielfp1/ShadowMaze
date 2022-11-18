@@ -375,7 +375,7 @@ shape = SubResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="." groups=["hit"]]
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2( 22.5, -7.5 )
@@ -383,3 +383,4 @@ shape = SubResource( 7 )
 disabled = true
 
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_finished"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body"]
