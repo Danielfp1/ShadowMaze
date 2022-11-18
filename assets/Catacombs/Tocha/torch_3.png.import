@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/torch_1.png-40446875754cc2502345e64e19e370c1.stex"
+path="res://.import/torch_3.png-e682f978c1671398e65c9618859cd3b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Maps/Itens/torch_1.png"
-dest_files=[ "res://.import/torch_1.png-40446875754cc2502345e64e19e370c1.stex" ]
+source_file="res://assets/Catacombs/Tocha/torch_3.png"
+dest_files=[ "res://.import/torch_3.png-e682f978c1671398e65c9618859cd3b2.stex" ]
 
 [params]
 
