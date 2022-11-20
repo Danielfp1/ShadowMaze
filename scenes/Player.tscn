@@ -339,7 +339,7 @@ tracks/0/keys = {
 extents = Vector2( 5, 9 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 12.5, 26.5 )
+extents = Vector2( 9, 26.5 )
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 5, 9 )
@@ -383,7 +383,7 @@ current = true
 [node name="AttackArea" type="Area2D" parent="." groups=["hit"]]
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( 22.5, -7.5 )
+position = Vector2( 21, -7.5 )
 shape = SubResource( 7 )
 disabled = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Enemies/Skeleton.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Skeleton.gd" type="Script" id=2]
@@ -36,6 +36,34 @@ tracks/0/keys = {
 "values": [ 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 ]
 }
 
+[sub_resource type="Animation" id=10]
+resource_name = "Hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 13 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 1.5
@@ -67,6 +95,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Walk"
@@ -85,7 +125,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 9.5, 9.75 )
+extents = Vector2( 7, 9.75 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 77.0584
@@ -106,6 +146,7 @@ vframes = 5
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 8 )
 anims/Death = SubResource( 5 )
+anims/Hit = SubResource( 10 )
 anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
@@ -115,6 +156,7 @@ position = Vector2( -3, -11.75 )
 shape = SubResource( 7 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 visible = false
@@ -122,8 +164,10 @@ position = Vector2( -3, -12 )
 shape = SubResource( 6 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 position = Vector2( -2, -11 )
 shape = SubResource( 9 )
 
