@@ -11,6 +11,9 @@ var can_die: bool = false
 
 export (int) var speed
 
+#Vida
+export (int) var health = 3
+
 func _physics_process(_delta: float) -> void:
 	move()
 	animate()
@@ -23,7 +26,7 @@ func move() ->void:
 		var distance_length: float = distance.length()
 		if distance_length <= 17:
 			velocity = Vector2.ZERO
-			player_ref.kill()
+			#player_ref.hit()
 		else:
 			velocity = speed * direction
 		#print(distance_length)
@@ -56,6 +59,12 @@ func on_body_exited(body):
 	if body.is_in_group("player"):
 		player_ref = null
  
+func hit() -> void:
+	print("Inimigo levou hit!")
+	health=health-1
+	if health<0:
+		kill()
+
 func kill() -> void:
 	can_die = true
 
