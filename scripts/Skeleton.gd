@@ -48,7 +48,7 @@ func verify_direction() -> void:
 		sprite.flip_h = true
 
 func on_body_entered(body):
-	print("Entrou" + body.name)
+	#print("Entrou" + body.name)
 	if body.is_in_group("player"):
 		player_ref = body
 
@@ -58,3 +58,8 @@ func on_body_exited(body):
  
 func kill() -> void:
 	can_die = true
+
+
+func on_Animation_animation_finished(anim_name):
+	if anim_name == "Death":
+		queue_free()
