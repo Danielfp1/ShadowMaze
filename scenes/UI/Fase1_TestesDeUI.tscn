@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Maps/Calabouco.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Enemies/Skeleton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Enemies/Bat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Enemies/Rat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Enemies/Wolf.tscn" type="PackedScene" id=7]
+
+[node name="Fase1" type="Node2D"]
+
+[node name="Terreno" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62, -1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 760, 360 )
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="Skeleton" parent="enemies" instance=ExtResource( 3 )]
+position = Vector2( 295, 359 )
+
+[node name="Skeleton6" parent="enemies" instance=ExtResource( 3 )]
+position = Vector2( 645, -29 )
+
+[node name="Skeleton4" parent="enemies" instance=ExtResource( 3 )]
+position = Vector2( 168, 193 )
+
+[node name="Skeleton5" parent="enemies" instance=ExtResource( 3 )]
+position = Vector2( 443, 388 )
+
+[node name="Skeleton2" parent="enemies" instance=ExtResource( 3 )]
+position = Vector2( 310, 197 )
+
+[node name="Skeleton3" parent="enemies" instance=ExtResource( 3 )]
+position = Vector2( 485, 173 )
+
+[node name="Wolf" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 530, -53 )
+
+[node name="Rat" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 589, -19 )
+
+[node name="Bat" parent="enemies" instance=ExtResource( 5 )]
+position = Vector2( 469, -24 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]

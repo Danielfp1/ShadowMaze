@@ -152,6 +152,7 @@ anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -3, -11.75 )
 shape = SubResource( 7 )
 
