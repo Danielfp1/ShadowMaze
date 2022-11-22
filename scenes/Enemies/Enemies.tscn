@@ -293,9 +293,6 @@ tile_data = PoolIntArray( 131073, 0, 0, 131076, 0, 0, 196609, 0, 0, 196612, 0, 0
 [node name="Rat" parent="." instance=ExtResource( 5 )]
 position = Vector2( 218, 29 )
 
-[node name="Skeleton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 365, 71 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Wolf" parent="." instance=ExtResource( 8 )]
@@ -304,3 +301,6 @@ speed = 75
 
 [node name="Bat" parent="." instance=ExtResource( 7 )]
 position = Vector2( -98, 110 )
+
+[node name="Skeleton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 89, 11 )
