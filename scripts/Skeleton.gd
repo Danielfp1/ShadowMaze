@@ -8,6 +8,7 @@ var velocity: Vector2
 
 #Flags
 var can_die: bool = false
+var can_attack: bool = false
 
 export (int) var speed
 
@@ -28,10 +29,12 @@ func move() ->void:
 		var distance: Vector2 = player_ref.global_position - global_position
 		var direction: Vector2 = distance.normalized()
 		var distance_length: float = distance.length()
-		if distance_length <= 17:
+		if distance_length <= 28:
 			velocity = Vector2.ZERO
+			can_attack = true
 		else:
 			velocity = speed * direction
+			can_attack = false
 	else:
 		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
@@ -44,8 +47,10 @@ func animate() -> void:
 		animation.play("Walk")
 	elif receives_knockback==false:
 		animation.play("Hit")
-	else:
+	elif can_attack:
 		animation.play("Attack")
+	else:
+		animation.play("Idle")
 
 func verify_direction() -> void:
 	if velocity.x > 0:
