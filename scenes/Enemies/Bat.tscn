@@ -83,7 +83,7 @@ speed = 60
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 4
-frame = 2
+frame = 1
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 5 )
@@ -92,6 +92,7 @@ anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
