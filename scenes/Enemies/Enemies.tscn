@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scenes/BaseTerrain_Level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Enemies/Rat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Enemies/Skeleton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Enemies/Wolf.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -292,10 +293,14 @@ tile_data = PoolIntArray( 131073, 0, 0, 131076, 0, 0, 196609, 0, 0, 196612, 0, 0
 [node name="Rat" parent="." instance=ExtResource( 5 )]
 position = Vector2( 218, 29 )
 
-[node name="Skeleton" parent="." instance=ExtResource( 6 )]
-position = Vector2( -77, -13 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Wolf" parent="." instance=ExtResource( 8 )]
+position = Vector2( 57, -196 )
+speed = 75
 
 [node name="Bat" parent="." instance=ExtResource( 7 )]
 position = Vector2( -98, 110 )
+
+[node name="Skeleton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 89, 11 )

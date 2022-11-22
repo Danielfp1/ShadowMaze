@@ -16,6 +16,16 @@ var facingDirection: String = ""
 #Velocidade de movimentação
 export (int) var speed
 
+#Vida
+export (int) var health = 6
+signal life_change(health)
+
+var max_hearts: int = 3;
+var hearts: float = max_hearts
+
+func _ready() -> void:
+	connect("life_change", get_parent().get_node("UI/Life"),"on_player_life_changed")
+	emit_signal("life_change", max_hearts)
 
 func _physics_process(_delta: float) -> void:
 	move()
@@ -104,6 +114,14 @@ func verify_direction() -> void:
 		#Olhar para cima
 		facingDirection = "up"
 		
+func hit() -> void:
+	print("Player levou hit!")
+	health=health-1
+	hearts=hearts-0.5
+	emit_signal("life_change", hearts)
+	if health<0:
+		kill()
+
 func kill() -> void:
 	can_die = true
 
@@ -114,3 +132,14 @@ func on_animation_finished(anim_name):
 	elif anim_name == "AttackRight" || anim_name == "AttackLeft" || anim_name == "AttackUp" || anim_name == "AttackDown":
 		can_attack = false
 		set_physics_process(true)
+
+
+func _on_AttackArea_body(body):
+	if body.is_in_group("enemy"):
+		body.hit()
+
+
+func on_Hurtbox_area_entered(area:Area2D):
+	if area.is_in_group("hurt"):
+		print("Ouch!")
+		hit()
