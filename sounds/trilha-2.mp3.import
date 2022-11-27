@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/trilha-2.mp3-2c452ebd8cc4b12488a5b627e92d011a.mp3str"
+
+[deps]
+
+source_file="res://sounds/trilha-2.mp3"
+dest_files=[ "res://.import/trilha-2.mp3-2c452ebd8cc4b12488a5b627e92d011a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
