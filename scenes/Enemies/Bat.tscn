@@ -109,13 +109,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 9.5, 10.5 )
+extents = Vector2( 9.5, 9.75 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 78.8543
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 14.9375, 7.6875 )
+extents = Vector2( 14.9375, 13.5 )
 
 [node name="Bat" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
@@ -136,8 +136,6 @@ anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -149,7 +147,7 @@ shape = SubResource( 6 )
 [node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, -3 )
+position = Vector2( 0, -0.5 )
 shape = SubResource( 9 )
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]

@@ -103,7 +103,7 @@ extents = Vector2( 9.5, 10.5 )
 radius = 78.8543
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 14, 11.5 )
+extents = Vector2( 15, 14.5 )
 
 [node name="Rat" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
@@ -137,7 +137,7 @@ shape = SubResource( 6 )
 [node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 1, 2.5 )
+position = Vector2( 0, 1.5 )
 shape = SubResource( 9 )
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
