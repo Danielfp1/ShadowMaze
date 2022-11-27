@@ -18,9 +18,6 @@ position = Vector2( 760, 360 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="Skeleton" parent="enemies" instance=ExtResource( 3 )]
-position = Vector2( 295, 359 )
-
 [node name="Skeleton6" parent="enemies" instance=ExtResource( 3 )]
 position = Vector2( 645, -29 )
 
@@ -37,12 +34,12 @@ position = Vector2( 310, 197 )
 position = Vector2( 485, 173 )
 
 [node name="Wolf" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( 530, -53 )
-
-[node name="Rat" parent="enemies" instance=ExtResource( 6 )]
-position = Vector2( 589, -19 )
+position = Vector2( 491, 268 )
 
 [node name="Bat" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( 469, -24 )
+position = Vector2( 609, 347 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="Rat" parent="." instance=ExtResource( 6 )]
+position = Vector2( 658, 334 )

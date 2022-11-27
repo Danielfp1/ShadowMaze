@@ -1,12 +1,39 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Enemies/Bat.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Bat.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=5]
-resource_name = "Death"
+[sub_resource type="Animation" id=10]
+resource_name = "Attack"
 length = 0.6
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Death"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
 tracks/0/interp = 1
@@ -51,6 +78,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Walk"
@@ -75,9 +114,13 @@ extents = Vector2( 9.5, 10.5 )
 [sub_resource type="CircleShape2D" id=6]
 radius = 78.8543
 
-[node name="Bat" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 14.9375, 7.6875 )
+
+[node name="Bat" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
 speed = 60
+health = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -85,7 +128,8 @@ hframes = 4
 vframes = 4
 frame = 1
 
-[node name="Animation" type="AnimationPlayer" parent="."]
+[node name="Animation" type="AnimationPlayer" parent="." groups=["enemy"]]
+anims/Attack = SubResource( 10 )
 anims/Death = SubResource( 5 )
 anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )
@@ -102,5 +146,12 @@ shape = SubResource( 7 )
 visible = false
 shape = SubResource( 6 )
 
+[node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -3 )
+shape = SubResource( 9 )
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="on_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="on_body_exited"]
