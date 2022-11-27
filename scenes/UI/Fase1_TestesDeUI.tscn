@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Maps/Calabouco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Enemies/Bat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Enemies/Rat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Enemies/Wolf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sounds/Trilha Sonora.tscn" type="PackedScene" id=8]
 
 [node name="Fase1" type="Node2D"]
 
@@ -43,3 +44,6 @@ position = Vector2( 609, 347 )
 
 [node name="Rat" parent="." instance=ExtResource( 6 )]
 position = Vector2( 658, 334 )
+
+[node name="Trilha Sonora" parent="." instance=ExtResource( 8 )]
+volume_db = -35.412
