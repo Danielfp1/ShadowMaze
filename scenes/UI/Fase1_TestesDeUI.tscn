@@ -40,10 +40,13 @@ position = Vector2( 491, 268 )
 [node name="Bat" parent="enemies" instance=ExtResource( 5 )]
 position = Vector2( 609, 347 )
 
-[node name="UI" parent="." instance=ExtResource( 4 )]
-
 [node name="Rat" parent="." instance=ExtResource( 6 )]
 position = Vector2( 658, 334 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="Canvas" type="CanvasModulate" parent="."]
+color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 
 [node name="Trilha Sonora" parent="." instance=ExtResource( 8 )]
 volume_db = -27.139
