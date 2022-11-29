@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/Hero/Hero.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/whiten_material.tres" type="Material" id=4]
+[ext_resource path="res://assets/light.jpg" type="Texture" id=5]
 
 [sub_resource type="Animation" id=17]
 resource_name = "AttackDown"
@@ -252,7 +253,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Animation:reset_on_save")
@@ -336,13 +337,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 5, 9 )
+extents = Vector2( 5, 8.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 9, 26.5 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 5, 9 )
+extents = Vector2( 7.5, 10 )
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 2 )
@@ -374,7 +375,7 @@ anims/RunRight = SubResource( 5 )
 anims/RunUp = SubResource( 9 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 3.5 )
 shape = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -391,9 +392,11 @@ disabled = true
 whiten_material = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-visible = false
-position = Vector2( 0, 3 )
+position = Vector2( -0.5, 3 )
 shape = SubResource( 20 )
+
+[node name="mainLight" type="Light2D" parent="."]
+texture = ExtResource( 5 )
 
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_finished"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body"]

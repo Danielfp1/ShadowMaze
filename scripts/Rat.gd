@@ -29,7 +29,8 @@ func move() ->void:
 		var distance: Vector2 = player_ref.global_position - global_position
 		var direction: Vector2 = distance.normalized()
 		var distance_length: float = distance.length()
-		if distance_length <= 20:
+		print(distance_length)
+		if distance_length <= 22:
 			velocity = Vector2.ZERO
 			can_attack = true
 		else:

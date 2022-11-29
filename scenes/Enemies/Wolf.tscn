@@ -49,6 +49,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -165,13 +177,13 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 9.5, 10.5 )
+extents = Vector2( 9.5, 9.75 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 130.096
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 30, 11.75 )
+extents = Vector2( 30, 14.5 )
 
 [node name="Wolf" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
@@ -196,7 +208,7 @@ anims/Walk = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 1, 1 )
+position = Vector2( 1, 0.25 )
 shape = SubResource( 7 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -208,7 +220,7 @@ shape = SubResource( 6 )
 [node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, -1 )
+position = Vector2( 0, 0.5 )
 shape = SubResource( 12 )
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]

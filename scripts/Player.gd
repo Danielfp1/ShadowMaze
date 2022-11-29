@@ -141,5 +141,4 @@ func _on_AttackArea_body(body):
 
 func on_Hurtbox_area_entered(area:Area2D):
 	if area.is_in_group("hurt"):
-		print("Ouch!")
 		hit()
