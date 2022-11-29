@@ -52,9 +52,11 @@ func attack() -> void:
 func animate() -> void:
 	if can_die:
 		animation.play("Death")
+		$death.play()
 		set_physics_process(false)
 	elif can_attack:
 		#Direção do ataque
+		$sword.play()
 		if facingDirection == "right":
 			animation.play("AttackRight")
 		elif facingDirection == "left":
@@ -141,4 +143,5 @@ func _on_AttackArea_body(body):
 
 func on_Hurtbox_area_entered(area:Area2D):
 	if area.is_in_group("hurt"):
+		$hurt.play()
 		hit()
