@@ -16,7 +16,7 @@
 position = Vector2( 62, -1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1698, -1415 )
+position = Vector2( -1698, -1414 )
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -48,7 +48,7 @@ position = Vector2( -1617, -1530 )
 position = Vector2( -1700, -1297 )
 
 [node name="Wolf2" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( -1706, -1468 )
+position = Vector2( -1718, -1533 )
 
 [node name="Skeleton" parent="enemies" instance=ExtResource( 3 )]
 position = Vector2( -1665, -1522 )

@@ -121,7 +121,7 @@ func hit() -> void:
 	health=health-1
 	hearts=hearts-0.5
 	emit_signal("life_change", hearts)
-	if health<0:
+	if health<=0:
 		kill()
 
 func kill() -> void:

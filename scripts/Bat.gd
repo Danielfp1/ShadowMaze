@@ -30,6 +30,7 @@ func move() ->void:
 		var direction: Vector2 = distance.normalized()
 		var distance_length: float = distance.length()
 		if distance_length <= 20:
+			print(distance_length)
 			velocity = Vector2.ZERO
 			can_attack = true
 		else:
