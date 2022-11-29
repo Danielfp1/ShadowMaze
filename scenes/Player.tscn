@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/Hero/Hero.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -134,6 +134,33 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 76, 77, 78 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 77, 78 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Hurtbox/CollisionShape2D:disabled")
@@ -381,7 +408,7 @@ material = ExtResource( 4 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 9
-frame = 1
+frame = 78
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -390,6 +417,7 @@ anims/AttackLeft = SubResource( 15 )
 anims/AttackRight = SubResource( 3 )
 anims/AttackUp = SubResource( 16 )
 anims/Death = SubResource( 4 )
+anims/Fall = SubResource( 21 )
 anims/Idle = SubResource( 1 )
 anims/IdleDown = SubResource( 10 )
 anims/IdleLeft = SubResource( 11 )
@@ -421,6 +449,7 @@ whiten_material = ExtResource( 4 )
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( -0.5, 3 )
 shape = SubResource( 20 )
+disabled = true
 
 [node name="mainLight" type="Light2D" parent="."]
 texture = ExtResource( 5 )

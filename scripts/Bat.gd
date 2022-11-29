@@ -49,6 +49,7 @@ func animate() -> void:
 		animation.play("Hit")
 	elif can_attack:
 		animation.play("Attack")
+		$attack.play()
 	else:
 		animation.play("Idle")
 

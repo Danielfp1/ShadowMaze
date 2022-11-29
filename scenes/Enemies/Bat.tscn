@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Enemies/Bat.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Bat.gd" type="Script" id=2]
+[ext_resource path="res://sounds/Enemies/Bat.mp3" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=10]
 resource_name = "Attack"
@@ -162,6 +163,10 @@ shape = SubResource( 6 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -0.5 )
 shape = SubResource( 9 )
+
+[node name="attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -25.0
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="on_body_entered"]

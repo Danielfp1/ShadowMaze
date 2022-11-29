@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mace2.mp3-95b062be3e2a26cbd29e86af34894357.mp3str"
+
+[deps]
+
+source_file="res://sounds/Enemies/Mace2.mp3"
+dest_files=[ "res://.import/Mace2.mp3-95b062be3e2a26cbd29e86af34894357.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

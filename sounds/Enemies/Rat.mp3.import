@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Rat.mp3-378ed49e1a7aec00acda91c38cf730e5.mp3str"
+
+[deps]
+
+source_file="res://sounds/Enemies/Rat.mp3"
+dest_files=[ "res://.import/Rat.mp3-378ed49e1a7aec00acda91c38cf730e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

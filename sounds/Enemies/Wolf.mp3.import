@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Wolf.mp3-948cf6877bd22de1c0c80eafe97df45d.mp3str"
+
+[deps]
+
+source_file="res://sounds/Enemies/Wolf.mp3"
+dest_files=[ "res://.import/Wolf.mp3-948cf6877bd22de1c0c80eafe97df45d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
