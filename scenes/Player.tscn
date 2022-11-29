@@ -354,7 +354,7 @@ material = ExtResource( 4 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 9
-frame = 28
+frame = 52
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 reset_on_save = false
