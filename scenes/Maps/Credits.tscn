@@ -34,6 +34,7 @@ volume_db = -27.139
 
 [node name="Music" parent="KinematicBody2D" instance=ExtResource( 3 )]
 stream = ExtResource( 6 )
+volume_db = -15.0
 autoplay = false
 
 [node name="Texto" type="Node2D" parent="."]
@@ -49,12 +50,6 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Fim de Jogo
 
-
-
-
-
-
-Créditos:
 
 "
 align = 1

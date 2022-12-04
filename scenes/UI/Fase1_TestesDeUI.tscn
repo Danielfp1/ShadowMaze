@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Maps/Calabouco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/Enemies/Rat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Enemies/Wolf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sounds/Trilha Sonora.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Notes/Note.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Maps/Exit.tscn" type="PackedScene" id=10]
 
 [node name="Fase1" type="Node2D"]
@@ -16,7 +17,15 @@
 position = Vector2( 62, -1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1698, -1414 )
+position = Vector2( -1732, -1410 )
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="Note" parent="Notes" instance=ExtResource( 9 )]
+position = Vector2( -1714, -1239 )
+
+[node name="Note2" parent="Notes" instance=ExtResource( 9 )]
+position = Vector2( -1583, -1333 )
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -45,10 +54,10 @@ position = Vector2( 658, 334 )
 position = Vector2( -1617, -1530 )
 
 [node name="Bat" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( -1700, -1297 )
+position = Vector2( -1444, -1193 )
 
 [node name="Wolf2" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( -1718, -1533 )
+position = Vector2( -1549, -1482 )
 
 [node name="Skeleton" parent="enemies" instance=ExtResource( 3 )]
 position = Vector2( -1665, -1522 )
@@ -56,7 +65,7 @@ position = Vector2( -1665, -1522 )
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
 [node name="Canvas" type="CanvasModulate" parent="."]
-color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="Trilha Sonora" parent="." instance=ExtResource( 8 )]
 volume_db = -20.0
