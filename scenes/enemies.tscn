@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/Bat.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Rat.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Wolf.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Skeleton.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Enemies/Rat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Enemies/Skeleton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Enemies/Wolf.tscn" type="PackedScene" id=8]
+
+[node name="enemies" type="Node2D"]
+
+[node name="Skeleton6" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 6 )]
+position = Vector2( 645, -29 )
+script = ExtResource( 4 )
+speed = 60
+
+[node name="Skeleton4" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 6 )]
+position = Vector2( 168, 193 )
+script = ExtResource( 4 )
+speed = 60
+
+[node name="Skeleton5" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 6 )]
+position = Vector2( 503, -14 )
+script = ExtResource( 4 )
+speed = 60
+
+[node name="Skeleton2" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 6 )]
+position = Vector2( 310, 197 )
+script = ExtResource( 4 )
+speed = 60
+
+[node name="Skeleton3" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 6 )]
+position = Vector2( 485, 173 )
+script = ExtResource( 4 )
+speed = 60
+
+[node name="Wolf" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 8 )]
+position = Vector2( 491, 268 )
+script = ExtResource( 3 )
+speed = 60
+
+[node name="Rat" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 5 )]
+position = Vector2( 658, 334 )
+script = ExtResource( 2 )
+speed = 60
+health = 2
+
+[node name="Rat2" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 5 )]
+position = Vector2( -1617, -1530 )
+script = ExtResource( 2 )
+speed = 60
+health = 2
+
+[node name="Bat" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 7 )]
+position = Vector2( -1444, -1193 )
+script = ExtResource( 1 )
+speed = 60
+health = 2
+
+[node name="Wolf2" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 8 )]
+position = Vector2( -1549, -1482 )
+script = ExtResource( 3 )
+speed = 60
+
+[node name="Skeleton" type="KinematicBody2D" parent="." groups=["enemy"] instance=ExtResource( 6 )]
+position = Vector2( -1665, -1522 )
+script = ExtResource( 4 )
+speed = 60
