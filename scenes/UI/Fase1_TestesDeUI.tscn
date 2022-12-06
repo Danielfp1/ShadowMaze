@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Maps/Calabouco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -12,7 +12,11 @@
 [ext_resource path="res://scenes/Maps/Exit.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Notes/Note10.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Notes/Note11.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Enemies/Skeleton.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Enemies/Rat.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Enemies/Bat.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/Notes/Note5.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/Enemies/Wolf.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/Notes/Note7.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/Notes/Note9.tscn" type="PackedScene" id=19]
 
@@ -27,46 +31,179 @@ position = Vector2( 706, 392 )
 [node name="Notes" type="Node" parent="."]
 
 [node name="Note" parent="Notes" instance=ExtResource( 9 )]
-position = Vector2( 49, 542 )
+position = Vector2( 277, 181 )
 
 [node name="Note2" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 38, 693 )
+position = Vector2( 691, -378 )
 
 [node name="Note3" parent="Notes" instance=ExtResource( 5 )]
-position = Vector2( 57, 839 )
+position = Vector2( -69, 367 )
 
 [node name="Note4" parent="Notes" instance=ExtResource( 6 )]
-position = Vector2( 235, 545 )
+position = Vector2( -857, -617 )
 
 [node name="Note5" parent="Notes" instance=ExtResource( 16 )]
-position = Vector2( 229, 681 )
+position = Vector2( -676, -1751 )
 
 [node name="Note6" parent="Notes" instance=ExtResource( 7 )]
-position = Vector2( 241, 826 )
+position = Vector2( 405, -1143 )
 
 [node name="Note7" parent="Notes" instance=ExtResource( 18 )]
-position = Vector2( 405, 541 )
+position = Vector2( -1081, -1186 )
 
 [node name="Note8" parent="Notes" instance=ExtResource( 19 )]
-position = Vector2( 413, 681 )
+position = Vector2( -1257, -424 )
 
 [node name="Note9" parent="Notes" instance=ExtResource( 19 )]
-position = Vector2( 418, 815 )
+position = Vector2( -1170, 358 )
 
 [node name="Note10" parent="Notes" instance=ExtResource( 11 )]
-position = Vector2( 571, 534 )
+position = Vector2( -83, -399 )
 
 [node name="Note11" parent="Notes" instance=ExtResource( 12 )]
-position = Vector2( 579, 676 )
+position = Vector2( -291, -984 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
 [node name="Canvas" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.172549, 0.168627, 0.168627, 1 )
 
 [node name="Trilha Sonora" parent="." instance=ExtResource( 8 )]
 volume_db = -20.0
 
 [node name="Exit" parent="." instance=ExtResource( 10 )]
 position = Vector2( -1730, -1517 )
+
+[node name="Inimigos" type="Node" parent="."]
+
+[node name="Bat" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( 451, 361 )
+
+[node name="Bat2" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( 483, -18 )
+
+[node name="Bat3" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( 670, -24 )
+
+[node name="Bat4" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( -419, 366 )
+
+[node name="Rat" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( 115, 168 )
+
+[node name="Rat2" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( 302, -216 )
+
+[node name="Rat3" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( -681, 350 )
+
+[node name="Rat4" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( -707, -18 )
+
+[node name="Rat5" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( 195, -403 )
+
+[node name="Wolf" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( 670, -504 )
+
+[node name="Wolf2" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( 67, -990 )
+
+[node name="Wolf3" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1113, 174 )
+
+[node name="Wolf4" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1450, 110 )
+
+[node name="Wolf5" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1081, -419 )
+
+[node name="Wolf6" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -601, -600 )
+
+[node name="Wolf7" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -291, -211 )
+
+[node name="Wolf8" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -490, -785 )
+
+[node name="Wolf9" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -479, -1159 )
+
+[node name="Wolf10" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( 669, -1169 )
+
+[node name="Wolf11" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1254, -560 )
+
+[node name="Wolf12" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1339, -1169 )
+
+[node name="Wolf13" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1061, -1500 )
+
+[node name="Wolf14" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1328, -1767 )
+
+[node name="Skeleton" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -303, -48 )
+
+[node name="Skeleton2" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -468, 167 )
+
+[node name="Skeleton3" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -684, -1003 )
+
+[node name="Skeleton4" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -1249, -963 )
+
+[node name="Skeleton5" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -845, -1340 )
+
+[node name="Skeleton6" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -298, -1527 )
+
+[node name="Skeleton7" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -490, -1742 )
+
+[node name="Skeleton8" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( 520, -1742 )
+
+[node name="Skeleton9" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( 80, -1367 )
+
+[node name="Bat5" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( -400, -391 )
+
+[node name="Bat6" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( -725, -331 )
+
+[node name="Rat6" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( -883, -232 )
+
+[node name="Bat7" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( 307, -692 )
+
+[node name="Bat8" parent="Inimigos" instance=ExtResource( 15 )]
+position = Vector2( 88, -683 )
+
+[node name="Rat7" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( 667, -766 )
+
+[node name="Rat8" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( -270, -623 )
+
+[node name="Rat9" parent="Inimigos" instance=ExtResource( 14 )]
+position = Vector2( -119, -1125 )
+
+[node name="Skeleton10" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( 487, -564 )
+
+[node name="Skeleton11" parent="Inimigos" instance=ExtResource( 13 )]
+position = Vector2( -1264, -214 )
+
+[node name="Wolf15" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -77, -1775 )
+
+[node name="Wolf16" parent="Inimigos" instance=ExtResource( 17 )]
+position = Vector2( -1022, -1764 )

@@ -189,6 +189,7 @@ extents = Vector2( 30, 14.5 )
 [node name="Wolf" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
 speed = 60
+health = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 9 )

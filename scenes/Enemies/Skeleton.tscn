@@ -188,6 +188,7 @@ extents = Vector2( 10, 16 )
 [node name="Skeleton" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
 speed = 60
+health = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -17 )

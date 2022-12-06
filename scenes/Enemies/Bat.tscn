@@ -133,7 +133,7 @@ extents = Vector2( 14.9375, 13.5 )
 [node name="Bat" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
 speed = 60
-health = 2
+health = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
