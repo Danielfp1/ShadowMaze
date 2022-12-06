@@ -191,6 +191,7 @@ script = ExtResource( 2 )
 speed = 60
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -49 )
 texture = SubResource( 9 )
 hframes = 5
 vframes = 4
@@ -208,22 +209,25 @@ anims/Run = SubResource( 4 )
 anims/Walk = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, -2.25 )
+position = Vector2( 3, 63 )
 shape = SubResource( 7 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
+position = Vector2( 2, 67 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 visible = false
 shape = SubResource( 6 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
+position = Vector2( -4, 74 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, 0.5 )
+position = Vector2( -1, 90 )
 shape = SubResource( 12 )
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -14, 89 )
 stream = ExtResource( 1 )
 volume_db = -5.0
 

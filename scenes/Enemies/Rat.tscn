@@ -136,7 +136,7 @@ speed = 60
 health = 2
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -17 )
+position = Vector2( 0, -76 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 6
@@ -162,7 +162,7 @@ shape = SubResource( 6 )
 [node name="Hitbox" type="Area2D" parent="." groups=["hurt"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, 1.5 )
+position = Vector2( -2, 40 )
 shape = SubResource( 9 )
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]

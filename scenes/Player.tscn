@@ -417,10 +417,11 @@ speed = 120
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 4 )
+position = Vector2( 2, -37 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 9
-frame = 28
+frame = 52
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -442,20 +443,25 @@ anims/RunRight = SubResource( 5 )
 anims/RunUp = SubResource( 9 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 3.5 )
 shape = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 current = true
 
 [node name="AttackArea" type="Area2D" parent="." groups=["hit"]]
+position = Vector2( 1, 27 )
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 position = Vector2( 21, -7.5 )
 shape = SubResource( 7 )
 disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+visible = false
 whiten_material = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
@@ -463,17 +469,21 @@ position = Vector2( -0.5, 3 )
 shape = SubResource( 20 )
 
 [node name="mainLight" type="Light2D" parent="."]
+visible = false
 texture = ExtResource( 5 )
 
 [node name="hurt" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1, 27 )
 stream = ExtResource( 6 )
 volume_db = -10.0
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1, 27 )
 stream = ExtResource( 7 )
 volume_db = -10.0
 
 [node name="sword" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1, 26 )
 stream = ExtResource( 8 )
 volume_db = -10.0
 
